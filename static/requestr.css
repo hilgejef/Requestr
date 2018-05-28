@@ -1,0 +1,43 @@
+p {
+    margin-bottom: 0px;
+}
+
+#requestList {
+    padding-top: 2rem;
+    padding-left: 30px;
+}
+
+#requestButton {
+    margin-right: 15px;
+    margin-top: 1.5rem;
+    float: right;
+}
+
+#header {
+    font-family: "Raleway", sans-serif;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding-left: 15px;
+}
+
+#subheader {
+    font-family: "Raleway", sans-serif;
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+    text-decoration: underline;
+}
+
+.requestBox {
+    overflow: hidden;
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-bottom: 1rem;
+    word-wrap: break-word;
+}
+
+.deleteButton {
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+    float: right;
+}

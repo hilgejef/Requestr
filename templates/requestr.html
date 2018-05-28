@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container" style="max-width: 720px" id="requestForm">
+  <h1 id="header">Requestr</h1>
+
+  <form data-bind="submit: addRequest">
+    <div class="form-group-row">
+      <label for="inputTitle" class="col-sm-4 col-form-label">Title</label>
+      <div class="col-sm-12">
+        <input data-bind="value: newTitle" type="text" name="title" class="form-control" id="inputTitle" placeholder="Title">
+      </div>
+    </div>
+    <div class="form-group-row">
+      <label for="inputDescription" class="col-sm-4 col-form-label">Description</label>
+      <div class="col-sm-12">
+        <input data-bind="value: newDescription" type="text" name="description" class="form-control" id="inputDescription" placeholder="Description">
+      </div>
+    </div>
+    <div class="form-group-row">
+      <label for="inputTarget" class="col-sm-4 col-form-label">Target Date</label>
+      <div class="col-sm-12">
+        <input data-bind="value: newTarget" type="date" name="target" class="form-control" id="inputTarget" placeholder="Target Date">
+      </div>
+    </div>
+    <div class="form-group-row">
+      <label for="inputArea" class="col-sm-4 col-form-label">Product Area</label>
+      <div class="col-sm-12">
+        <select data-bind="value: newArea" name="area" id="inputArea" class="form-control">
+            <option selected>Policies</option>
+            <option>Billing</option>
+            <option>Claims</option>
+            <option>Reports</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group-row">
+      <label for="inputClient" class="col-sm-4 col-form-label">Client</label>
+      <div class="col-sm-12">
+        <select data-bind="options: clients,
+                           value: newClient,
+                           optionsText: 'name'"
+                name="client" id="inputClient" class="form-control">
+        </select>
+      </div>
+    </div>
+    <div class="form-group-row">
+      <label for="inputPriority" class="col-sm-4 col-form-label">Priority</label>
+      <div class="col-sm-12">
+        <input data-bind="value: newPriority" type="text" name="priority" class="form-control" id="inputPriority" placeholder="Priority">
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" id="requestButton">Create request</button>
+  </form>
+</div>
+
+<div class="container" style="max-width: 720px" id="requestList">
+  <h3 id="subheader">Requests</h3>
+  <div data-bind="foreach: sortedRequests, visible: requests().length > 0">
+    <div class="requestBox border border-dark rounded">
+      <span data-bind="text: id" style="display:none"></span>
+      <dl class="row">
+        <dt class="col-sm-4">Title</dt>
+        <dd class="col-sm-8"><p data-bind="text: title"></p></dd>
+
+        <dt class="col-sm-4">Description</dt>
+        <dd class="col-sm-8"><p data-bind="text: description"></p></dd>
+
+        <dt class="col-sm-4">Target Date</dt>
+        <dd class="col-sm-8"><p data-bind="text: target"></p></dd>
+
+        <dt class="col-sm-4">Product Area</dt>
+        <dd class="col-sm-8"><p data-bind="text: area"></p></dd>
+
+        <dt class="col-sm-4">Client</dt>
+        <dd class="col-sm-8"><p data-bind="text: client"></p></dd>
+
+        <dt class="col-sm-4">Priority</dt>
+        <dd class="col-sm-8"><p data-bind="text: priority"></p></dd>
+      </dl>
+
+      <button data-bind="click: $root.deleteRequest" type="submit" class="btn btn-danger deleteButton">Delete</button>
+    </div
+  </div>
+</div>
+
+{% endblock %}
