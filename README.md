@@ -12,4 +12,5 @@ If you want to run the code yourself, most of the setup involves setting up Pyth
 2. Configure the WSGI.py file to import from requestr.py.
 3. Create a MYSQL database, and change the DB configuration in requestr.py.
 4. Create a DB_Credentials.py file and set the username and password.
-5. Clone repo from git into your /mysite directory.
+5. Run init_db.py to create tables/some client models.
+6. Clone repo from git into your /mysite directory.
