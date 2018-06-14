@@ -1,5 +1,5 @@
 # Requestr
-Requestr is a feature request application that allows users to create and delete feature requests, built to this [specification](https://github.com/IntuitiveWebSolutions/EngineeringMidLevel).
+Requestr is a feature request application that allows users to create and delete feature requests.
 ### Technologies
 OS: Ubuntu
 Server Side Scripting: Python 3.6
